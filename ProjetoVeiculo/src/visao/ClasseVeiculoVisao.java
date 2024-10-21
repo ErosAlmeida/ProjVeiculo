@@ -2,7 +2,7 @@ package visao;
 
 import java.util.ArrayList;
 import dominio.ClasseVeiculo;
-import fakedb.ClasseVeiculoFakeDB;
+import repositorio.ClasseVeiculoRepo;
 
 public class ClasseVeiculoVisao{
 
@@ -10,17 +10,22 @@ public class ClasseVeiculoVisao{
     }
 
     public void Exibir(){
-        ClasseVeiculoFakeDB db = new ClasseVeiculoFakeDB();
-        ArrayList<ClasseVeiculo> lista = db.gettabela();
+       ClasseVeiculoRepo repo = new ClasseVeiculoRepo();
+       ArrayList<ClasseVeiculo> lista = repo.Browse();
         for(ClasseVeiculo cp : lista){
-            System.out.println("================================================");
-            System.out.println("Classe de produto");
-            System.out.println("Codigo: " + cp.getCodigo());
-            System.out.println("Marca: " + cp.getMarca());
-            System.out.println("Modelo: " + cp.getModelo());
-            System.out.println("Ano de fabricacao: " + cp.getanoFabricacao());
-            System.out.println("Preço do carro: " + cp.getpreco());
-            System.out.println("==================================================");
+         this.imprimir(cp);
         }
+    }
+
+    private void imprimir(ClasseVeiculo cp){
+        System.out.println("================================================");
+        System.out.println("Classe de produto");
+        System.out.println("Codigo: " + cp.getCodigo());
+        System.out.println("Marca: " + cp.getMarca());
+        System.out.println("Modelo: " + cp.getModelo());
+        System.out.println("Ano de fabricacao: " + cp.getanoFabricacao());
+        System.out.println("Preço do carro: " + cp.getpreco());
+        System.out.println("==================================================");
+
     }
 }
