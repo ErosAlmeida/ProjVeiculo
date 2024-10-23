@@ -1,6 +1,6 @@
 package dominio;
 
-public abstract class BaseParamentro {
+public abstract class BaseParamentro {//classe abstrata nao pode ser instanciada
     protected int codigo; //atributos
     protected String Marca;
     protected String Modelo;

@@ -11,8 +11,6 @@ public class ClasseVeiculoRepo extends BaseRepositorio<ClasseVeiculo> {
         this.db = new ClasseVeiculoFakeDB();
         this.dados = this.db.gettabela();
     }
-
-
     @Override
     public ClasseVeiculo Read(int chave) {
     for(ClasseVeiculo cp : this.dados){
@@ -22,12 +20,14 @@ public class ClasseVeiculoRepo extends BaseRepositorio<ClasseVeiculo> {
     }
     return null;
 }
-
     @Override
     public ClasseVeiculo Edit(ClasseVeiculo instancia) {
         ClasseVeiculo cp = this.Read(instancia.getCodigo());
         if(cp != null){
             cp.setMarca(instancia.getMarca());
+            cp.setModelo(instancia.getModelo());
+            cp.setanoFabricacao(instancia.getanoFabricacao());
+            cp.setpreco(instancia.getpreco());
             return cp;
         }
         else{
