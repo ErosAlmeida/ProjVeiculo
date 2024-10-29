@@ -1,13 +1,12 @@
 package dominio;
 
-public abstract class BaseParamentro {//classe abstrata nao pode ser instanciada
-    protected int codigo; //atributos
+public abstract class BaseParamentro {
+    protected int codigo; 
     protected String Marca;
     protected String Modelo;
     protected int anoFabricacao;
     protected double preco;
 
-    //propriedades
     public int getCodigo(){
         return codigo;
     }
@@ -38,10 +37,10 @@ public abstract class BaseParamentro {//classe abstrata nao pode ser instanciada
     public void setpreco(double preco){
         this.preco = preco;
     }
-  //construtores vazio
+ 
   public BaseParamentro(){
   }
-  //contrutor com os atributos
+
   public BaseParamentro(int codigo, String Marca, String Modelo, int anoFabricacao, double preco){
     this.codigo = codigo;
     this.Marca = Marca;

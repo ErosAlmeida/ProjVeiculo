@@ -44,12 +44,10 @@ public class ClasseVeiculoRepo extends BaseRepositorio<ClasseVeiculo> {
     }
 
     public ClasseVeiculo getLast() {
-        // Verifica se a lista está vazia
+    
         if (this.dados.isEmpty()) {
-            return null;  // Retorna null se a lista estiver vazia
+            return null;  
         }
-        
-        // Retorna o último item da lista
         return this.dados.get(this.dados.size() - 1);
     }
 

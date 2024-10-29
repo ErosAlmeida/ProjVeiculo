@@ -2,7 +2,6 @@ package fakedb;
 import java.util.ArrayList;
 import dominio.ClasseVeiculo;
 
-
 public abstract class BaseFakeDB<TDominio> {
     protected ArrayList<TDominio> tabela;
 
